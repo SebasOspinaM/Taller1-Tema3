@@ -32,6 +32,13 @@ namespace Punto4
             : base(numHojas, valorHoja, valorHojaColor, titulo, fechaPubli)
         {
             NomPeriodico = nomPeriodico;
+
+
+        }
+        public override string ToString()
+        {
+            string msg =  $"\nTítulo: {Titulo} | Número de hojas: {NumHojas} | Fecha de publicación: {FechaPubli} | Nombre del periódico: {NomPeriodico}";
+            return msg;
         }
     }
 
@@ -45,6 +52,11 @@ namespace Punto4
         {
             NomAutor = nomAutor;
             TipoPortada = tipoPortada;
+        }
+        public override string ToString()
+        {
+            string msg =  $"\nTítulo: {Titulo} | Número de hojas: {NumHojas} | Fecha de publicación: {FechaPubli} | Nombre del autor: {NomAutor} | Tipo de portada: {TipoPortada}";
+            return msg;
         }
     }
 }
