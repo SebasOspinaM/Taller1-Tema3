@@ -5,18 +5,34 @@
         string Nom, Pass;
         int Amount;
 
-        Console.WriteLine("*---------------- Bienvenido al Cajero Electronico ----------------*");
-        Console.WriteLine("\nPresione cualquier tecla para continuar y realizar su retiro");
-        Console.ReadKey();
-        Console.Write("\nIngrese su nombre: ");
-        Nom = Console.ReadLine();
-        Console.Write("\nIngrese su contraseña: ");
-        Pass = Console.ReadLine();
-        Console.Write("\nIngrese la cantidad a retirar: $");
-        Amount = Int32.Parse(Console.ReadLine());
+        Console.WriteLine("*---------------- Bienvenido al Cajero Electronico ----------------*\n");
+
+        bool continuar = true;
+
+        while (continuar)
+        {
+            Console.WriteLine("\nPresione cualquier tecla para continuar y realizar su retiro");
+            Console.ReadKey();
+            Console.Write("\nIngrese su nombre: ");
+            Nom = Console.ReadLine();
+            Console.Write("\nIngrese su contraseña: ");
+            Pass = Console.ReadLine();
+            Console.Write("\nIngrese la cantidad a retirar: $");
+            Amount = Int32.Parse(Console.ReadLine());
 
 
-        Validacion(Amount);
+            Validacion(Amount);
+
+            Console.Write("\n¿Desea realizar otra operación? (s/n): ");
+            string respuesta = Console.ReadLine();
+
+            if (respuesta != "s")
+            {
+                Console.WriteLine("\nGracias por usar nuestro servicio. ¡Tenga un buen día!");
+                continuar = false;
+            }
+        }
+        
 
 
 
@@ -28,21 +44,21 @@
         if (amount < 0)
         {
 
-            Console.WriteLine("El valor del retiro no puede ser un número negativo");
+            Console.WriteLine("\nEl valor del retiro no puede ser un número negativo");
 
 
         }
         else if (amount == 0)
         {
 
-            Console.WriteLine("El valor del retiro no puede ser cero");
+            Console.WriteLine("\nEl valor del retiro no puede ser cero");
 
 
         }
         else if (amount > 600000)
         {
 
-            Console.WriteLine("El valor del retiro máximo es de $600.000");
+            Console.WriteLine("\nEl valor del retiro máximo es de $600.000");
 
 
         }
