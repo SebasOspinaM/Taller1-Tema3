@@ -7,9 +7,9 @@
 
         Console.WriteLine("*---------------- Bienvenido al Cajero Electronico ----------------*\n");
 
-        bool continuar = true;
+        bool aux1 = true;
 
-        while (continuar)
+        while (aux1)
         {
             Console.WriteLine("\nPresione cualquier tecla para continuar y realizar su retiro");
             Console.ReadKey();
@@ -24,12 +24,12 @@
             Validacion(Amount);
 
             Console.Write("\n¿Desea realizar otra operación? (s/n): ");
-            string respuesta = Console.ReadLine();
+            string aux2 = Console.ReadLine();
 
-            if (respuesta != "s")
+            if (aux2 != "s")
             {
                 Console.WriteLine("\nGracias por usar nuestro servicio. ¡Tenga un buen día!");
-                continuar = false;
+                aux1 = false;
             }
         }
         
